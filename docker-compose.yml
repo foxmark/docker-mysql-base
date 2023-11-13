@@ -1,0 +1,27 @@
+version: '3.8'
+
+networks:
+  app_network:
+    name: ${NETWORK_NAME}
+
+volumes:
+  mysql8_data_volume:
+      name: ${APP_NAME}_data_volume
+
+
+services:
+  # service name will by used by other containers to connect
+  mysql8_service:
+    image: mysql:${MYSQL_IMAGE_VERSION}
+    container_name: ${APP_NAME}_mysql8_container
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - mysql8_data_volume:/var/lib/mysql
+    command: --default-authentication-plugin=caching_sha2_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    # bith set in .env file - therefor no value set!
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_PASSWORD
+    networks:
+      - app_network
