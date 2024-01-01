@@ -43,5 +43,5 @@ Output should look a bit like this:
 
 ```
 CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS                      PORTS                                                  NAMES
-f3faaa6f53e7   mysql:8.0.35              "docker-entrypoint.s…"   15 minutes ago   Up 15 minutes               33060/tcp, 0.0.0.0:3312->3306/tcp, :::3312->3306/tcp   mysql_mysql8_container
+f3faaa6f53e7   mysql:8.0.35              "docker-entrypoint.s…"   15 minutes ago   Up 15 minutes               33060/tcp, 0.0.0.0:3306->3306/tcp, :::3306->3306/tcp   mysql_mysql8_container
 ```
