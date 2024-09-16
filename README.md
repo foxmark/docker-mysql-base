@@ -24,6 +24,20 @@ cp .env.example .env
 nano .env
 ```
 
+## Override/change configuration (Optional)
+
+Rename and inspect ```docker-compose.override.yml``` file
+
+> Note: You can use this file to make local configuration changes.
+
+```sh
+cp docker-compose.override.example.yml docker-compose.override.yml
+```
+
+```sh
+nano docker-compose.override.yml
+```
+
 ## Start docker services
 
 ```sh
